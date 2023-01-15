@@ -4,8 +4,10 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -20,8 +22,11 @@ import com.google.firebase.database.FirebaseDatabase;
 public class MarkActivity extends AppCompatActivity {
 
     Button navHome, navMark, navWork, comment_btn, logout;
-    EditText title, mark, comment;
+    EditText title, comment;
+    Spinner spinnerTitle, spinnerMark;
     int i = 0;
+    String[] assignmentTitle = new String[]{"mobile_app", "fragment_app", "fragment_app"};
+    String[] assignmentMark = new String[]{"0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,14 +34,21 @@ public class MarkActivity extends AppCompatActivity {
         setContentView(R.layout.activity_mark);
 
         title = findViewById(R.id.titleInput);
-        mark = findViewById(R.id.markInput);
+        spinnerMark = (Spinner)findViewById(R.id.markInput);
         comment = findViewById(R.id.commentInput);
         comment_btn = findViewById(R.id.comment_btn);
+        spinnerTitle = (Spinner)findViewById(R.id.title_dropdown_input);
 
         navMark = findViewById(R.id.navMark);
         navHome = findViewById(R.id.navHome);
         navWork = findViewById(R.id.navWork);
         logout = findViewById(R.id.logout);
+
+        ArrayAdapter<String> assignmetTitleAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, assignmentTitle);
+        spinnerTitle.setAdapter(assignmetTitleAdapter);
+
+        ArrayAdapter<String> assignmetMarkAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, assignmentMark);
+        spinnerMark.setAdapter(assignmetMarkAdapter);
 
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -54,8 +66,8 @@ public class MarkActivity extends AppCompatActivity {
         comment_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String myTitle = title.getText().toString().trim();
-                String myMark = mark.getText().toString().trim();
+                String myTitle = spinnerTitle.getSelectedItem().toString();;
+                String myMark = spinnerMark.getSelectedItem().toString();
                 String myComment = comment.getText().toString().trim();
 
                 if (myTitle.isEmpty()) {
@@ -93,7 +105,7 @@ public class MarkActivity extends AppCompatActivity {
                         @Override
                         public void onComplete(@NonNull Task<Void> task) {
                             if (task.isSuccessful()) {
-                                mark.setText("");
+//                                mark.setText("");
                                 Toast.makeText(MarkActivity.this, "Updated", Toast.LENGTH_SHORT).show();
                             } else {
                                 Toast.makeText(MarkActivity.this, "Something Wrong", Toast.LENGTH_SHORT).show();
