@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <View
+        android:id="@+id/view3"
+        android:layout_width="353dp"
+        android:layout_height="118dp"
+        android:background="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.157" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="215dp"
+        android:layout_height="122dp"
+        android:background="@mipmap/ic_banner_foreground"
+        app:layout_constraintBottom_toBottomOf="@+id/view3"
+        app:layout_constraintEnd_toEndOf="@+id/view3"
+        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintStart_toStartOf="@+id/view3"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/logout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="@color/black"
+        android:padding="12dp"
+        android:text="Log Out"
+        android:textSize="20sp"
+        app:cornerRadius="15dp"
+        app:layout_constraintBottom_toTopOf="@+id/view3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.9"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.355" />
+
+    <Button
+        android:id="@+id/download"
+        android:layout_width="197dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="76dp"
+        android:backgroundTint="@color/black"
+        android:text="FYP List"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="@+id/view3"
+        app:layout_constraintStart_toStartOf="@+id/view3"
+        app:layout_constraintTop_toBottomOf="@+id/view3" />
+
+    <Button
+        android:id="@+id/download2"
+        android:layout_width="197dp"
+        android:layout_height="50dp"
+        android:backgroundTint="@color/black"
+        android:text="Proposal List"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="@+id/download"
+        app:layout_constraintStart_toStartOf="@+id/download"
+        app:layout_constraintTop_toBottomOf="@+id/download" />
+
+    <Button
+        android:id="@+id/download3"
+        android:layout_width="197dp"
+        android:layout_height="50dp"
+        android:backgroundTint="@color/black"
+        android:text="Draft List"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="@+id/download2"
+        app:layout_constraintStart_toStartOf="@+id/download2"
+        app:layout_constraintTop_toBottomOf="@+id/download2" />
+
+    <Button
+        android:id="@+id/download4"
+        android:layout_width="197dp"
+        android:layout_height="50dp"
+        android:backgroundTint="@color/black"
+        android:text="Slide List"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="@+id/download3"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/download3"
+        app:layout_constraintTop_toBottomOf="@+id/download3" />
+
+    <Button
+        android:id="@+id/download5"
+        android:layout_width="197dp"
+        android:layout_height="50dp"
+        android:backgroundTint="@color/black"
+        android:text="Presentation List"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="@+id/download4"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/download4"
+        app:layout_constraintTop_toBottomOf="@+id/download4" />
+
+    <Button
+        android:id="@+id/download6"
+        android:layout_width="197dp"
+        android:layout_height="50dp"
+        android:backgroundTint="@color/black"
+        android:text="Poster List"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="@+id/download5"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/download5"
+        app:layout_constraintTop_toBottomOf="@+id/download5" />
+
+
+    <View
+        android:id="@+id/nav"
+        android:layout_width="match_parent"
+        android:layout_height="67dp"
+        android:layout_marginTop="8dp"
+        android:background="#808080"
+        android:textColor="@color/white"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/navHome"
+        android:layout_width="121dp"
+        android:layout_height="64dp"
+        android:backgroundTint="#808080"
+        android:text="Home"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="@+id/nav"
+        app:layout_constraintStart_toStartOf="@+id/nav"
+        app:layout_constraintTop_toTopOf="@+id/nav" />
+
+    <Button
+        android:id="@+id/navMark"
+        android:layout_width="121dp"
+        android:layout_height="64dp"
+        android:backgroundTint="#808080"
+        android:text="Mark"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="@+id/nav"
+        app:layout_constraintEnd_toEndOf="@+id/nav"
+        app:layout_constraintTop_toTopOf="@+id/nav" />
+
+    <Button
+        android:id="@+id/navWork"
+        android:layout_width="121dp"
+        android:layout_height="64dp"
+        android:backgroundTint="#808080"
+        android:text="Work"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="@+id/nav"
+        app:layout_constraintEnd_toStartOf="@+id/navMark"
+        app:layout_constraintStart_toEndOf="@+id/navHome"
+        app:layout_constraintTop_toTopOf="@+id/nav" />
+</androidx.constraintlayout.widget.ConstraintLayout>
